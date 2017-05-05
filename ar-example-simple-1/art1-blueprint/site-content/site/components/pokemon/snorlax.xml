@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component>
+	<content-type>/component/pokemon</content-type>	<display-template/>
+	<merge-strategy>inherit-levels</merge-strategy>
+	<objectGroupId>0646</objectGroupId>
+	<objectId>0646fd19-6655-ea76-deb9-cecfa258ef64</objectId>
+	<file-name>snorlax.xml</file-name>
+	<folder-name/>
+	<internal-name>Snorlax</internal-name>
+	<xRotation>0</xRotation>
+	<xPosition>-2</xPosition>
+	<yPosition>-2</yPosition>
+	<scaleMultiplier>1</scaleMultiplier>
+	<objectFile>	<item>	<key>/static-assets/models/snorlax/snorlax.obj</key>
+	<value>/static-assets/models/snorlax/snorlax.obj</value>
+	<fileType_mvs>obj</fileType_mvs>
+	</item></objectFile>
+	<textureFile>	<item>	<key>/static-assets/models/snorlax/snorlax.mtl</key>
+	<value>/static-assets/models/snorlax/snorlax.mtl</value>
+	<fileType_mvs>mtl</fileType_mvs>
+	</item></textureFile>
+	<createdDate>5/4/2017 1:25:34</createdDate>
+	<createdDate_dt>5/4/2017 1:25:34</createdDate_dt>
+	<lastModifiedDate>5/4/2017 1:44:44</lastModifiedDate>
+	<lastModifiedDate_dt>5/4/2017 1:44:44</lastModifiedDate_dt>
+</component>

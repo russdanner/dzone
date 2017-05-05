@@ -2,16 +2,17 @@
 <!DOCTYPE html>
 <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 <!-- three.js library -->
-<script src='./static-assets/vendor/threejs/three.js'></script>
-<script src="./static-assets/vendor/threejs/loaders/MTLLoader.js"></script>
-<script src="./static-assets/vendor/threejs/loaders/OBJLoader.js"></script>
+<script src='/static-assets/vendor/threejs/three.js'></script>
+<script src="/static-assets/vendor/threejs/loaders/MTLLoader.js"></script>
+<script src="/static-assets/vendor/threejs/loaders/OBJLoader.js"></script>
 
 <!-- jsartookit -->
-<script src="./static-assets/vendor/jsartoolkit5/build/artoolkit.min.js"></script>
-<script src="./static-assets/vendor/jsartoolkit5/js/artoolkit.api.js"></script>
+<script src="/static-assets/vendor/jsartoolkit5/build/artoolkit.min.js"></script>
+<script src="/static-assets/vendor/jsartoolkit5/js/artoolkit.api.js"></script>
 
 <!-- include threex.artoolkit -->
-<script src="./static-assets/vendor/threex/threex-artoolkitsource.js"></script>
+<script src="/static-assets/vendor/threex/threex-artoolkitsource.js"></script>
+
 
 <body style='margin : 0px; overflow: hidden; font-family: Monospace; user-select: none;'>
 
@@ -67,7 +68,7 @@
 		arToolkitSource.onResize(renderer.domElement)		
 	});
 
-	// Function to load a 3D Model in to the scene
+
 	function loadModelIntoScene(modelData, scene) {
       // Load the 3D Model
       var objectLoader = new THREE.OBJLoader();
@@ -91,22 +92,26 @@
       });
    	};
     
-    
-
-	// Load the 3D Model
-	var model =  { id: "pikachu", scale: 5, xRotation: 0 };
+	// no longer needed as these are provided by the CMS / controller
+	//var model =  { id: "pikachu", scale: 5, xRotation: 0 };
 	//var model =  { id: "snorlax", scale: 1, xRotation: 0 };
 
-	loadModelIntoScene({ 
-      	basePath: "./static-assets/models/" + model.id + "/",
-        mtlPath: model.id + ".mtl",
-        objPath: "./static-assets/models/" + model.id + "/" + model.id + ".obj",
-        scaleMultiplier: model.scale,
-        xPosition: -2,
-        yPosition: -2,
-        xRotation: model.xRotation }, scene);
+	<#list pokemonInstances as pokemonInstance>
+
+      <#assign texturePath = pokemonInstance.model.textureFile.item[0].key />
+      <#assign objectPath = pokemonInstance.model.objectFile.item[0].key />
+      
+      loadModelIntoScene({ 
+      	basePath: "${texturePath?substring(0, texturePath?last_index_of('/')+1)}",
+        mtlPath: "${texturePath?substring(texturePath?last_index_of('/') + 1)}",
+        objPath: "${objectPath}",
+        scaleMultiplier: ${pokemonInstance.scaleMultiplier},
+        xPosition: ${pokemonInstance.xPosition},
+        yPosition: ${pokemonInstance.yPosition},
+        xRotation: ${pokemonInstance.model.xRotation}}, scene);
         
-	
+	</#list>	
+    
 	// render the scene
 	onRenderFcts.push(function(){
 		renderer.clear();

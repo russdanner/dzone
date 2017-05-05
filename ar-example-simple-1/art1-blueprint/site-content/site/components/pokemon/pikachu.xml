@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component>
+	<content-type>/component/pokemon</content-type>	<display-template/>
+	<merge-strategy>inherit-levels</merge-strategy>
+	<objectGroupId>e2bf</objectGroupId>
+	<objectId>e2bf3d99-4fcd-d602-c6f9-5dc4596bf24d</objectId>
+	<file-name>pikachu.xml</file-name>
+	<folder-name/>
+	<internal-name>Pikachu</internal-name>
+	<xRotation>0</xRotation>
+	<objectFile>	<item>	<key>/static-assets/models/pikachu/pikachu.obj</key>
+	<value>/static-assets/models/pikachu/pikachu.obj</value>
+	<fileType_mvs>obj</fileType_mvs>
+	</item></objectFile>
+	<textureFile>	<item>	<key>/static-assets/models/pikachu/pikachu.mtl</key>
+	<value>/static-assets/models/pikachu/pikachu.mtl</value>
+	<fileType_mvs>mtl</fileType_mvs>
+	</item></textureFile>
+	<createdDate>5/4/2017 1:45:33</createdDate>
+	<createdDate_dt>5/4/2017 1:45:33</createdDate_dt>
+	<lastModifiedDate>5/4/2017 2:46:14</lastModifiedDate>
+	<lastModifiedDate_dt>5/4/2017 2:46:14</lastModifiedDate_dt>
+</component>
